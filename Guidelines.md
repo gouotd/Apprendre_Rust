@@ -5,7 +5,7 @@
 | # | Module | Contenu RBE intégré | [ ] Fait |
 |---|--------|-------------------|----------|
 | 01 | Hello World + Primitives + Debug/Display | Rust install, Cargo, println!, format!, {:?}, Debug vs Display, field | [x] |
-| 02 | Variable Bindings + Types + Conversion | let, mut, shadowing, constantes, type inference, casting | [ ] |
+| 02 | Variable Bindings + Types + Conversion | let, mut, shadowing, constantes, type inference, casting | [x] |
 | 03 | Flow of Control + Expressions + Functions | if/else, match, for, while, loop, fn, closures | [ ] |
 | 04 | Scoping rules + Ownership | ownership, borrowing, &mut &, lifetimes | [ ] |
 | 05 | Custom Types + Attributes | struct, impl, new(), self, #[derive] | [ ] |

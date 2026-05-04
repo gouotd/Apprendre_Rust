@@ -1,0 +1,1 @@
+/home/dgo/Projects/TestMammouthAI/Rust_tutoriel/02_variables_types/variables_types/target/debug/variables_types: /home/dgo/Projects/TestMammouthAI/Rust_tutoriel/02_variables_types/variables_types/src/main.rs

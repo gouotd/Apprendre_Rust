@@ -1,4 +1,4 @@
 [package]
-name = "variables_types"
+name = "functions_control_flow"
 version = "0.1.0"
 edition = "2021"
