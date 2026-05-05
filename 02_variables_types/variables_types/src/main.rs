@@ -47,11 +47,9 @@ fn main() {
     println!("y = {}",y);
     println!("Type de y : {} ", type_of(&x));
 
-
-
-
 }
 
 fn type_of<T>(_: &T) -> &'static str {
     std::any::type_name::<T>()
 }
+

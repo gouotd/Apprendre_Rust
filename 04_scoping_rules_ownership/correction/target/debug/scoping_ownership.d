@@ -1,0 +1,1 @@
+/home/dgo/Projects/TestMammouthAI/Rust_tutoriel/04_scoping_rules_ownership/correction/target/debug/scoping_ownership: /home/dgo/Projects/TestMammouthAI/Rust_tutoriel/04_scoping_rules_ownership/correction/src/main.rs

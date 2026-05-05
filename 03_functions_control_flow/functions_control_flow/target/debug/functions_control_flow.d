@@ -1,0 +1,1 @@
+/home/dgo/Projects/TestMammouthAI/Rust_tutoriel/03_functions_control_flow/functions_control_flow/target/debug/functions_control_flow: /home/dgo/Projects/TestMammouthAI/Rust_tutoriel/03_functions_control_flow/functions_control_flow/src/main.rs
