@@ -1,0 +1,1 @@
+/home/dgo/Projects/TestMammouthAI/Rust_tutoriel/05_custom_types_attributes/correction/target/debug/custom_types: /home/dgo/Projects/TestMammouthAI/Rust_tutoriel/05_custom_types_attributes/correction/src/main.rs

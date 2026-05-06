@@ -1,10 +1,17 @@
-// 3. Ownership - Move
+// 3.a. Ownership - Move
 fn exercice_move() {
     let nom = String::from("Alice");
     let nom2 = nom; // nom transfère sa possession à nom2
 
     // println!("{}", nom);  // ERREUR: nom n'est plus valide
     println!("Move: {}", nom2);
+}
+
+// 3.b. Clone pour garder les deux
+fn exercice_clone() {
+    let texte = String::from("Bonjour");
+    let texte2 = texte.clone(); // Copie profonde: texte2 a ses propres données
+    println!("Clone: texte={}, texte2={}", texte, texte2);
 }
 
 // 4. Copy vs Move
@@ -63,8 +70,11 @@ fn main() {
     }
     // message n'existe plus ici
 
-    // 3. Move
+    // 3.a. Move
     exercice_move();
+
+    // 3.b. Clone
+    exercice_clone();
 
     // 4. Copy vs Move
     exercice_copy();
