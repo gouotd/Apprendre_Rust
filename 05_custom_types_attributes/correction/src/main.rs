@@ -1,13 +1,29 @@
-// 2. Structs
+// Étape 2.1 : Struct avec champs nommés
 #[derive(Debug, Clone)]
 struct Personne {
     nom: String,
     age: u32,
 }
 
+// Étape 2.2 : Tuple struct
 struct Point3D(u8, u8, u8);
 
-// 4. CompteBancaire avec méthodes
+// Étape 2.3 : Unit struct (badge)
+struct Connecte;
+
+fn se_connecter(cle: &str) -> Option<Connecte> {
+    if cle == "admin" {
+        Some(Connecte)
+    } else {
+        None
+    }
+}
+
+fn acceder_admin(_badge: Connecte) {
+    println!("Accès admin accordé");
+}
+
+// Étape 4 : CompteBancaire avec méthodes
 #[derive(Debug)]
 struct CompteBancaire {
     titulaire: String,
@@ -15,7 +31,7 @@ struct CompteBancaire {
 }
 
 impl CompteBancaire {
-    // 5. Méthode associée (constructeur)
+    // Étape 5 : Méthode associée (constructeur)
     fn new(titulaire: &str, solde: f64) -> Self {
         CompteBancaire {
             titulaire: titulaire.to_string(),
@@ -45,22 +61,33 @@ impl CompteBancaire {
 }
 
 fn main() {
-    // 2. Struct avec champs nommés
+    // Étape 2.1 : Struct avec champs nommés
     let moi = Personne {
         nom: String::from("Développeur"),
         age: 25,
     };
     println!("Nom: {}, Age: {}", moi.nom, moi.age);
 
-    // Tuple struct
+    // Étape 2.2 : Tuple struct
     let point = Point3D(10, 20, 30);
     println!("Point3D: x={}, y={}, z={}", point.0, point.1, point.2);
 
-    // 3. #[derive(Debug, Clone)]
+    // Étape 2.3 : Unit struct (badge)
+    match se_connecter("admin") {
+        Some(badge) => acceder_admin(badge),
+        None => println!("Clé incorrecte"),
+    }
+
+    match se_connecter("mauvaise") {
+        Some(badge) => acceder_admin(badge),
+        None => println!("Clé incorrecte"),
+    }
+
+    // Étape 3 : #[derive(Debug, Clone)]
     let clone = moi.clone();
     println!("Clone (Debug): {:?}", clone);
 
-    // 4. CompteBancaire avec méthodes
+    // Étape 4 : CompteBancaire avec méthodes
     let mut compte = CompteBancaire::new("Alice", 1000.0);
     compte.afficher_solde();
 
@@ -72,11 +99,11 @@ fn main() {
 
     compte.retirer(2000.0); // Fonds insuffisants
 
-    // 5. Méthode associée new
+    // Étape 5 : Méthode associée new
     let compte2 = CompteBancaire::new("Bob", 500.0);
     println!("\nCompte de Bob: {:?}", compte2);
 
-    // 6. Field Init Shorthand
+    // Étape 6 : Field Init Shorthand
     let nom = String::from("Charlie");
     let age: u32 = 30;
     let charlie = Personne { nom, age };
