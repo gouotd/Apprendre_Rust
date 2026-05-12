@@ -1,0 +1,1 @@
+/home/dgo/Projects/TestMammouthAI/Rust_tutoriel/06_enums_pattern_matching/correction/target/debug/enums_pattern_matching: /home/dgo/Projects/TestMammouthAI/Rust_tutoriel/06_enums_pattern_matching/correction/src/main.rs

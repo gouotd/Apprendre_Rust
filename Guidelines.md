@@ -9,7 +9,7 @@
 | 03 | Flow of Control + Expressions + Functions | if/else, match, for, while, loop, fn, closures | [x] |
 | 04 | Scoping rules + Ownership | ownership, borrowing, &mut &, lifetimes | [x] |
 | 05 | Custom Types + Attributes | struct, impl, new(), self, #[derive] | [x] |
-| 06 | Enums + Pattern Matching | enum, match, if let, Option, Result | [ ] |
+| 06 | Enums + Pattern Matching | enum, match, if let, Option, Result, Some/None | [x] |
 | 07 | Traits + Generics | trait, impl Trait, dyn Trait, T: Bound | [ ] |
 | 08 | Collections | Vec, HashMap, String, slice, &str | [ ] |
 | 09 | Iterators + Closures | iterators, closures, functional style | [ ] |
