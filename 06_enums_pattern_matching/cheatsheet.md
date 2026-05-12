@@ -70,15 +70,42 @@ match div(10.0, 0.0) {
 enum Feu { Rouge, Vert, Orange }
 
 impl Feu {
-    fn suivant(&self) -> Feu {
-        match self {
-            Feu::Rouge => Feu::Vert,
-            Feu::Vert => Feu::Orange,
-            Feu::Orange => Feu::Rouge,
-        }
-    }
+    fn suivant(&self) -> Feu { ... }
+    fn afficher(&self) { ... }
 }
 ```
+
+## Consommant (`-> Self`) vs Mutateur (`&mut self`)
+
+```rust
+// CONSOMMANT : retourne une nouvelle valeur
+fn suivant(&self) -> Feu {
+    match self {
+        Feu::Rouge => Feu::Vert,
+        Feu::Vert => Feu::Orange,
+        Feu::Orange => Feu::Rouge,
+    }
+}
+// Usage : x = x.suivant();  ← réassignation obligatoire
+
+// MUTATEUR : modifie self sur place, pas de retour
+fn suivant_mut(&mut self) {
+    *self = match self {
+        Feu::Rouge => Feu::Vert,
+        Feu::Vert => Feu::Orange,
+        Feu::Orange => Feu::Rouge,
+    }
+}
+// Usage : x.suivant_mut();  ← modifie directement
+```
+
+| | Consommant | Mutateur |
+|---|-----------|----------|
+| Signature | `fn f(&self) -> Type` | `fn f(&mut self)` |
+| Usage | `x = x.f()` | `x.f()` |
+| Comportement | Crée une **nouvelle** valeur | **Modifie** la valeur existante |
+| Readable | Oui | Non (a besoin de `&mut`) |
+| Variable | `let mut` pour réassigner | `let mut` pour muter |
 
 ## Option vs Result
 | | Option<T> | Result<T, E> |

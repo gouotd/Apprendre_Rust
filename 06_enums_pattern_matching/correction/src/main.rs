@@ -57,6 +57,42 @@ impl Direction {
     }
 }
 
+// FeuTricolore avec les deux versions de suivant()
+#[derive(Debug, Clone, Copy)]
+enum FeuTricolore {
+    Rouge,
+    Orange,
+    Vert,
+}
+
+impl FeuTricolore {
+    // Version CONSOMMANTE : retourne une nouvelle valeur
+    fn suivant(&self) -> FeuTricolore {
+        match self {
+            FeuTricolore::Rouge => FeuTricolore::Vert,
+            FeuTricolore::Vert => FeuTricolore::Orange,
+            FeuTricolore::Orange => FeuTricolore::Rouge,
+        }
+    }
+
+    // Version MUTATRICE : modifie self sur place
+    fn suivant_mut(&mut self) {
+        *self = match self {
+            FeuTricolore::Rouge => FeuTricolore::Vert,
+            FeuTricolore::Vert => FeuTricolore::Orange,
+            FeuTricolore::Orange => FeuTricolore::Rouge,
+        }
+    }
+
+    fn afficher(&self) {
+        match self {
+            FeuTricolore::Rouge => println!("  STOP"),
+            FeuTricolore::Orange => println!("  ATTENTION"),
+            FeuTricolore::Vert => println!("  PASSEZ"),
+        }
+    }
+}
+
 fn afficher_direction(d: Direction) {
     match d {
         Direction::Nord => println!("Direction: Nord"),
@@ -121,4 +157,21 @@ fn main() {
     let nord = Direction::Nord;
     println!("Nord opposé: {:?}", nord.oppose());
     println!("Sud opposé: {:?}", Direction::Sud.oppose());
+
+    // FeuTricolore : démo des deux approches
+    println!("\n--- Version CONSOMMANTE (retourne une nouvelle valeur) ---");
+    let mut feu = FeuTricolore::Vert;
+    feu.afficher();
+    feu = feu.suivant(); // On doit réassigner
+    feu.afficher();
+    feu = feu.suivant();
+    feu.afficher();
+
+    println!("\n--- Version MUTATRICE (modifie sur place) ---");
+    let mut feu2 = FeuTricolore::Vert;
+    feu2.afficher();
+    feu2.suivant_mut(); // Pas de réassignation
+    feu2.afficher();
+    feu2.suivant_mut();
+    feu2.afficher();
 }
